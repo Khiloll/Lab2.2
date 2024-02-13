@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
 def buy_karandash(n):
     if n == 1:
         print(f"Я купил {n} карандаш")
