@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+
 def kolichectvo_bikov_korov_telyat(total_money, total_heads):
     # переменные для количества быков, коров и телят
     Bulls = 0
