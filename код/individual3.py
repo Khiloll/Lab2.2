@@ -2,30 +2,17 @@
 # -*- coding: utf-8 -*-
 
 
+def sum_of_multiples(n, k):
+    total_sum = 0
+    for i in range(10**(n-1), 10**n):  # Генерируем все n-значные числа
+        if i % k == 0:  # Проверяем, кратно ли число k
+            total_sum += i
+    return total_sum
 
-def kolichectvo_bikov_korov_telyat(total_money, total_heads):
-    # переменные для количества быков, коров и телят
-    Bulls = 0
-    cows = 0
-    calves = 0
+# Ввод значений n и k
+n = int(input("Введите значение n (от 1 до 4): "))
+k = int(input("Введите значение k: "))
 
-    # перебор возможных комбинаций количества быков, коров и телят
-    for num_bulls in range(total_heads + 1):
-        for num_cows in range(total_heads + 1 - num_bulls):
-            num_calves = total_heads - num_bulls - num_cows
-            # Проверяем, хватит ли денег
-            if (num_bulls*10 + num_cows*5 + num_calves*0.5) == total_money:
-                bulls, cows, calves = num_bulls, num_cows, num_calves
-                break
-
-    return bulls, cows, calves
-
-# параметры
-total_money = 100
-total_heads = 100
-
-# Вызываем функцию для расчета количества быков, коров и телят
-num_bulls, num_cows, num_calves = kolichectvo_bikov_korov_telyat (total_money, total_heads)
-
-# Выводим результат
-print(f"Количество быков: {num_bulls}, коров: {num_cows}, телят: {num_calves}")
+# Вычисление суммы всех n-значных чисел, кратных k
+result = sum_of_multiples(n, k)
+print(f"Сумма всех {n}-значных чисел, кратных {k}: {result}")
